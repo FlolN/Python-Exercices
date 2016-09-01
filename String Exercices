@@ -1,0 +1,53 @@
+def donuts(count):
+	if count <= 9:
+		return ('Number of donuts: ' + str(count))
+	else:
+		return ('Number of donuts: many')
+		
+def both_ends(s) :
+	if len(s)<=2 :
+		return ''
+	else : 
+		return s[0] + s[1] + s[-2] + s[-1]
+
+def fix_start(s) :
+	smod = s.replace(s[0],'*')
+	return s[0] + smod[1:]
+	
+def mix_up(a,b):
+	aa = b[0:2] + a[2:]
+	bb = a[0:2] + b[2:]
+	return( aa + ' ' + bb)
+	
+def verbing(s):
+    if len(s)<3 :
+        return s
+    elif s.endswith('ing') :
+        return s + 'ly'
+    else :
+        return s + 'ing'
+        
+def not_bad(s):
+	index_not = s.find('not')
+	index_bad = s.find('bad')
+	if index_not < index_bad :
+		return s[0:index_not] + 'good' + s[index_bad+3:]
+	else :
+		return s
+		
+def front_back(a,b):
+	if len(a)%2 == 0: 
+		delim_a = len(a)/2
+	else : 
+		delim_a=len(a)//2+1
+	if len(b)%2 == 0: 
+		delim_b = len(b)/2
+	else : 
+		delim_b=len(b)//2+1
+
+	a_front = a[0:delim_a]
+	a_back = a[delim_a:]
+	b_front = b[0:delim_b]
+	b_back = b[delim_b:]
+	return (a_front + b_front + a_back + b_back)
+
